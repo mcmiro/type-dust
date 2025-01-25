@@ -127,6 +127,11 @@ const DustInput = () => {
         const y = inputRect.top + inputRect.height / 2 + window.scrollY;
 
         createParticles(x, y, particleSettings.numberOfParticles);
+
+        // Trigger vibration on mobile devices
+        if (navigator.vibrate) {
+          navigator.vibrate(100); // Vibrate for 100ms
+        }
       }
     }
 
