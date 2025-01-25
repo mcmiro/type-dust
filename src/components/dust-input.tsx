@@ -123,8 +123,8 @@ const DustInput = () => {
         const inputElement = e.target as HTMLInputElement;
         const inputRect = inputElement.getBoundingClientRect();
 
-        const x = inputRect.left + textWidth;
-        const y = inputRect.top + inputRect.height / 2;
+        const x = inputRect.left + textWidth + window.scrollX;
+        const y = inputRect.top + inputRect.height / 2 + window.scrollY;
 
         createParticles(x, y, particleSettings.numberOfParticles);
       }
