@@ -20,7 +20,7 @@ const DustInput = () => {
 
   // Particle settings to control behavior and appearance
   const particleSettings = {
-    size: 1.25, // Initial size of particles
+    size: 1, // Initial size of particles
     speed: 5, // Speed of particles
     wind: 1, // Horizontal motion (wind effect)
     animationOffsetLeft: 25, // Offset from left
@@ -148,7 +148,10 @@ const DustInput = () => {
       const inputFieldWidth =
         inputRef.current?.getBoundingClientRect().width ?? 0;
 
-      const width = textWidth <= inputFieldWidth ? textWidth : inputFieldWidth;
+      const width =
+        textWidth <= inputFieldWidth
+          ? textWidth
+          : inputFieldWidth - particleSettings.animationOffsetLeft / 2;
 
       return width;
     }
